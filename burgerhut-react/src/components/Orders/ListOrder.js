@@ -1,7 +1,23 @@
-import React, { Component } from 'react'
+import React, { useEffect, useState } from 'react';
 
-export class ListOrder extends Component {
-  render() {
+import axios from "axios";
+
+export default function ListOrder() {
+
+    const [orders, setOrders] = useState([]);
+
+    const loadOrders = async () => {
+        const allOrders = await axios.get("http://localhost:8080/allOrders");
+        console.log(allOrders.data);
+    };
+
+    useEffect(()=>{
+        loadOrders();
+    },[]);
+
+
+
+
     return (
       <div className='container'>
         <div className='py-4'>
@@ -30,7 +46,7 @@ export class ListOrder extends Component {
                     </tr>
                     <tr>
                     <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
+                    <td colSpan="2">Larry the Bird</td>
                     <td>@twitter</td>
                     </tr>
                 </tbody>
@@ -39,7 +55,5 @@ export class ListOrder extends Component {
         </div> 
       </div>
     )
-  }
-}
 
-export default ListOrder
+}

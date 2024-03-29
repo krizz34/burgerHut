@@ -22,10 +22,10 @@ export default function Navbar() {
                     <a className="nav-link" href="#">Order Status</a>
                     </li>
                 </ul>
-                <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link font-weight-bold text-dark" href="#">
-                            <i class="fa-solid fa-right-from-bracket"></i>
+                <ul className="navbar-nav ml-auto mb-2 mb-lg-0">
+                    <li className="nav-item">
+                        <a className="nav-link font-weight-bold text-dark" href="#">
+                            <i className="fa-solid fa-right-from-bracket"></i>
                         </a>
                     </li>
                 </ul>
