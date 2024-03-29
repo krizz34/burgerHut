@@ -8,7 +8,7 @@ export default function ListOrder() {
 
     const loadOrders = async () => {
         const allOrders = await axios.get("http://localhost:8080/allOrders");
-        console.log(allOrders.data);
+        setOrders(allOrders.data);
     };
 
     useEffect(()=>{
@@ -25,30 +25,33 @@ export default function ListOrder() {
             <table className="table table-stripped table-hover">
                 <thead>
                     <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
-                    <th scope="col">Handle</th>
+                        <th scope="col">Order No</th>
+                        <th scope="col">Order Title</th>
+                        <th scope="col">Extras</th>
+                        <th scope="col">User Mob.</th>
+                        <th scope="col">Order Status</th>
+                        <th scope="col">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">3</th>
-                    <td colSpan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                    </tr>
+
+                    {
+                        orders.map((orders) => (
+                            <tr key={orders.orderId}>
+                                <th scope="row">{orders.orderId}</th>
+                                <td>{orders.orderTitle}</td>
+                                <td>{orders.extras}</td>
+                                <td>{orders.userMob}</td>
+                                <td>{orders.status}</td>
+                                <td>
+                                    <button className='btn btn-info btn-sm mx-1'><i className="fa-solid fa-eye text-light" /></button>
+                                    <button className='btn btn-secondary btn-sm mx-1'><i className="fa-solid fa-pencil text-light" /></button>
+                                    <button className='btn btn-danger btn-sm mx-1'><i className="fa-solid fa-trash text-light" /></button>
+                                </td>
+                            </tr>
+                        ))
+                    }
+                    
                 </tbody>
             </table>
 

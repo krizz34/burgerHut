@@ -1,4 +1,6 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
+
 
 export default function Navbar() {
   return (
@@ -15,9 +17,13 @@ export default function Navbar() {
                     <li className="nav-item">
                     <a className="nav-link active" aria-current="page" href="#">Place an Order</a>
                     </li>
+
                     <li className="nav-item">
-                    <a className="nav-link" href="#">All orders</a>
+                        <NavLink to={"/ListOrder"} className={'nav-link'} style={{ color: '#000000', fontWeight: "bold" }}>
+                            All Orders
+                        </NavLink>
                     </li>
+                    
                     <li className="nav-item">
                     <a className="nav-link" href="#">Order Status</a>
                     </li>
@@ -25,7 +31,7 @@ export default function Navbar() {
                 <ul className="navbar-nav ml-auto mb-2 mb-lg-0">
                     <li className="nav-item">
                         <a className="nav-link font-weight-bold text-dark" href="#">
-                            <i className="fa-solid fa-right-from-bracket"></i>
+                            <i className="fa-solid fa-right-from-bracket" />
                         </a>
                     </li>
                 </ul>
