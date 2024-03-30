@@ -26,7 +26,7 @@ export default function AddOrder() {
     const onSubmit = async (e) => {
         e.preventDefault();
         console.log(order);
-        await axios.post("http://127.0.0.1:8080/newOrders", order);
+        await axios.post("http://127.0.0.1:8080/newOrder", order);
         navigateTo("/listOrder");
     }
 

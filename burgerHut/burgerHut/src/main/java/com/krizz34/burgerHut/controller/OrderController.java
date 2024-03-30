@@ -15,7 +15,7 @@ public class OrderController {
     @Autowired
     private OrderRepository newOrderRepository;
 
-    @PostMapping("/newOrders")
+    @PostMapping("/newOrder")
     orders newOrders(@RequestBody orders newOrders){
         return newOrderRepository.save(newOrders);
     }
@@ -25,11 +25,33 @@ public class OrderController {
         return newOrderRepository.findAll();
     }
 
-    @GetMapping("/selectOrders/{orderId}")
+    @GetMapping("/selectOrder/{orderId}")
     orders getOrderById(@PathVariable Long orderId){
-        return newOrderRepository.findById(orderId).orElseThrow(()->new orderNotFoundException(orderId));
+        return newOrderRepository.findById(orderId)
+                .orElseThrow(()->new orderNotFoundException(orderId));
     }
 
+    @PutMapping("/updateOrder/{orderId}")
+    orders updateOrder(@RequestBody orders editedOrder, @PathVariable Long orderId){
+        return newOrderRepository.findById(orderId)
+                .map(existingUserInstance -> {
+                    existingUserInstance.setOrderTitle(editedOrder.getOrderTitle());
+                    existingUserInstance.setExtras(editedOrder.getExtras());
+                    existingUserInstance.setUserMob(editedOrder.getUserMob());
+                    existingUserInstance.setStatus(editedOrder.getStatus());
+                    return newOrderRepository.save(existingUserInstance);
+                })
+                .orElseThrow(()->new orderNotFoundException(orderId));
+    }
+
+    @DeleteMapping("/deleteOrder/{orderId}")
+    String deleteOrder(@PathVariable Long orderId){
+        if (!newOrderRepository.existsById(orderId)){
+            throw new orderNotFoundException(orderId);
+        }
+        newOrderRepository.deleteById(orderId);
+        return "Order with ID: " + orderId + " has been successfully deleted.";
+    }
 
 
 }
