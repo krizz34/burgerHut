@@ -46,6 +46,7 @@ export default function AddOrder() {
                             <option value="Hut Chicken Combo">Hut Chicken Combo</option>
                             <option value="Hut Veggi Combo">Hut Veggi Combo</option>
                             <option value="Hut Beef Combo">Hut Beef Combo</option>
+                            <option value="Hut Beef Combo">Hut Paneer Combo</option>
                         </select>
                     </div>
                     <div className="mb-3">
