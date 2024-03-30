@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react';
 
 import axios from "axios";
+import { Link, useParams } from 'react-router-dom';
 
 export default function ListOrder() {
 
     const [orders, setOrders] = useState([]);
+    const {orderId} = useParams();
+
 
     const loadOrders = async () => {
         const allOrders = await axios.get("http://localhost:8080/allOrders");
@@ -15,6 +18,11 @@ export default function ListOrder() {
         loadOrders();
     },[]);
 
+
+    const deleteOrder = async (orderId) => {
+        await axios.delete(`http://localhost:8080/deleteOrder/${orderId}`)
+        loadOrders();
+    }
 
 
 
@@ -44,9 +52,9 @@ export default function ListOrder() {
                                 <td>{orders.userMob}</td>
                                 <td>{orders.status}</td>
                                 <td>
-                                    <button className='btn btn-info btn-sm mx-1'><i className="fa-solid fa-eye text-light" /></button>
-                                    <button className='btn btn-secondary btn-sm mx-1'><i className="fa-solid fa-pencil text-light" /></button>
-                                    <button className='btn btn-danger btn-sm mx-1'><i className="fa-solid fa-trash text-light" /></button>
+                                    <Link to={`/viewOrder/${orders.orderId}`} className='btn btn-info btn-sm mx-1'><i className="fa-solid fa-eye text-light" /></Link>
+                                    <Link to={`/updateOrder/${orders.orderId}`} className='btn btn-secondary btn-sm mx-1'><i className="fa-solid fa-pencil text-light" /></Link>
+                                    <button onClick={() => deleteOrder(orders.orderId)} className='btn btn-danger btn-sm mx-1'><i className="fa-solid fa-trash text-light" /></button>
                                 </td>
                             </tr>
                         ))
