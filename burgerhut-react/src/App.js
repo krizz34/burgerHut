@@ -17,8 +17,8 @@ function App() {
             <Navbar />
             <Routes>
                 <Route exact path="/" element={<Home/>} />
-                <Route exact path="/AddOrder" element={<AddOrder/>} />
-                <Route exact path="/ListOrder" element={<ListOrder/>} />
+                <Route exact path="/addOrder" element={<AddOrder/>} />
+                <Route exact path="/listOrder" element={<ListOrder/>} />
             </Routes>
     </Router>
     </div>

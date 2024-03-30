@@ -18,13 +18,13 @@ export default function Navbar() {
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                     
                     <li className="nav-item">
-                        <NavLink to={"/AddOrder"} className={'nav-link'} style={{ color: '#000000', fontWeight: "bold" }}>
+                        <NavLink to={"/addOrder"} className={'nav-link'} style={{ color: '#000000', fontWeight: "bold" }}>
                             Place an Order
                         </NavLink>
                     </li>
 
                     <li className="nav-item">
-                        <NavLink to={"/ListOrder"} className={'nav-link'} style={{ color: '#000000', fontWeight: "bold" }}>
+                        <NavLink to={"/listOrder"} className={'nav-link'} style={{ color: '#000000', fontWeight: "bold" }}>
                             All Orders
                         </NavLink>
                     </li>

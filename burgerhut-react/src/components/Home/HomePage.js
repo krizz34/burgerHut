@@ -11,7 +11,7 @@ export default function Home() {
             {/* <h1 className="display-3 mb-4" style={{ color: '#000000', fontWeight: 'bold'}}>Welcome to <img src={logo} alt="logo of FilmiHub" className="img-fluid" style={{ maxHeight: '92px', paddingBottom: '20px'}} /></h1> */}
             <h1 className="display-3 mb-4" style={{ color: '#000000', fontWeight: 'bold'}}>Welcome to BurgerHut</h1>
             <p className="lead mb-4" style={{ color: '#000000' }}>Order Now, explore the Huts, and experience Western classics like never before!</p>
-            <Link to="/AddOrder" className="btn btn-lg customBtnClr">Add an Order</Link>
+            <Link to={"/addOrder"} className="btn btn-lg customBtnClr">Add an Order</Link>
           </div>
         </div>
       </div>
