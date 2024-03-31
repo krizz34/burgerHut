@@ -53,5 +53,16 @@ public class OrderController {
         return "Order with ID: " + orderId + " has been successfully deleted.";
     }
 
+    @GetMapping("/preparingOrders")
+    List<orders> getOrdersPreparing() {
+        return newOrderRepository.findByStatus("preparing");
+    }
+
+    @GetMapping("/readyOrders")
+    List<orders> getOrdersReady() {
+        return newOrderRepository.findByStatus("ready");
+    }
+
+
 
 }
