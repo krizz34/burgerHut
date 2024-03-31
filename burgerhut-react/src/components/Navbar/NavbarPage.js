@@ -1,15 +1,16 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
+import logoTextRed from './img/burgerHutTextRed.png';
 
 
 export default function Navbar() {
   return (
     <div>
       
-        <nav className="navbar navbar-expand-lg shadow mb-4">
+        <nav className="navbar navbar-expand-lg shadow bg-none">
             <div className="container-fluid">
                 <NavLink to={"/"} className={'navbar-brand'} style={{ color: '#000000', fontWeight: "bold" }}>
-                    burgerHut
+                    <img src={logoTextRed} alt="text-logo of burgerHut" className="img-fluid" style={{ maxHeight: '28px', marginTop: '-6px' }} />
                 </NavLink>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
@@ -30,7 +31,9 @@ export default function Navbar() {
                     </li>
                     
                     <li className="nav-item">
-                    <a className="nav-link" href="#">Order Status</a>
+                        <NavLink to={"/orderStatus"} className={'nav-link'} style={{ color: '#000000', fontWeight: "bold" }}>
+                            Order Status
+                        </NavLink>
                     </li>
                 </ul>
                 <ul className="navbar-nav ml-auto mb-2 mb-lg-0">
