@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import './OrderState.css';
+
 
 import axios from "axios";
 import { Link, useParams } from 'react-router-dom';
@@ -30,30 +32,38 @@ export default function OrderState() {
     return (
       <div className='container'>
         <div className='py-4'>
-          <div style={{marginBottom:"30px"}}>
-              <h3>Ready</h3>
-              <div style={{backgroundColor:"black", width:"84vw", height:"2px", marginTop:"10px", marginBottom:"10px"}}></div>
-              {
-                  readyOrders.map((readyOrders_Instance) => (
+            <div style={{marginBottom:"20px"}}>
+                <h3>Ready</h3>
+                <div style={{backgroundColor:"black", width:"84vw", height:"2px", marginTop:"10px", marginBottom:"10px"}} />
 
-                    <div className="card bg-success">
-                        <h3> Order No. : {readyOrders_Instance.orderId} </h3>
-                    </div>
-                  ))
-              }
-          </div>
+                <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+                    {
+                        readyOrders.map((readyOrders_Instance) => (
+                          <div className='col'>
+                              <div className="card customCardReady">
+                                  <h3> Order No. : {readyOrders_Instance.orderId} </h3>
+                              </div>
+                          </div>
+                        ))
+                    }
+                </div>
+            </div>
 
-            <div style={{marginBottom:"30px"}}>
-              <h3>Ready</h3>
-              <div style={{backgroundColor:"black", width:"84vw", height:"2px", marginTop:"10px", marginBottom:"10px"}}></div>
-              {
-                  preparingOrders.map((preparingOrders_Instance) => (
+            <div>
+              <h3>Preparing</h3>
+              <div style={{backgroundColor:"black", width:"84vw", height:"2px", marginTop:"10px", marginBottom:"10px"}} />
 
-                    <div className="card bg-warning">
-                        <h3> Order No. : {preparingOrders_Instance.orderId} </h3>
-                    </div>
-                  ))
-              }
+              <div className="row row-cols-1 row-cols-md-2 row-cols-lg-4">
+                  {
+                      preparingOrders.map((preparingOrders_Instance) => (
+                        <div className='col'>
+                            <div className="card customCardPreparing">
+                                <h3> Order No. : {preparingOrders_Instance.orderId} </h3>
+                            </div>
+                        </div>
+                      ))
+                  }
+              </div>
           </div>
             {/* <table className="table table-stripped table-hover">
                 <thead>

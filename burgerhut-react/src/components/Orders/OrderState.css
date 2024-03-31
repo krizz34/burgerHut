@@ -1,0 +1,19 @@
+.customCardReady{
+    min-height: 100px;
+    max-width: 350px;
+    margin: 10px;
+    background-color: rgb(79, 205, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.customCardPreparing{
+    min-height: 100px;
+    max-width: 350px;
+    margin: 10px;
+    background-color: yellow;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
