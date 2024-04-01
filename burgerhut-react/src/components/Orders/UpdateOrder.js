@@ -78,7 +78,7 @@ export default function UpdateOrder() {
                             <option value="preparing" >Preparing</option>
                             <option value="ready">Ready</option>
                         </select>
-                    </div>
+                    </div><br /><br />
                     
                     <button type="submit" className="btn btn-primary">Submit</button>
 
