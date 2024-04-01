@@ -2,7 +2,6 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 
-
 export default function AddOrder() {
 
     let navigateTo = useNavigate();
@@ -43,7 +42,14 @@ export default function AddOrder() {
                         <label htmlFor="orderTitle" className="form-label">Combo Title:</label>
                         <select className="form-select" id="orderTitle" required name='orderTitle' value={orderTitle} onChange={(e)=>onInputChange(e)}>
                             <option selected >-select-</option>
-                            <option value="Hut Chicken Combo">Hut Chicken Combo</option>
+                            <option value="Spicy Chicken Double Patty">Spicy Chicken Double Patty</option>
+                            <option value="Spicy Delux Paneer Burger">Spicy Delux Paneer Burger</option>
+                            <option value="Fiesta Chicken Burger">Fiesta Chicken Burger</option>
+                            <option value="Mexican Aloo Tikki Double Patty">Mexican Aloo Tikki Double Patty</option>
+                            <option value="Sultan Hut Burger">Sultan Hut Burger</option>
+                            <option value="Spicy Paneer Wrap">Spicy Paneer Wrap</option>
+                            <option value="orwegian Cheese and Grilled Chicken">Norwegian Cheese and Grilled Chicken</option>
+                            <option value="Greek Kebab Double Patty">Greek Kebab Double Patty</option>
                             <option value="Hut Veggi Combo">Hut Veggi Combo</option>
                             <option value="Hut Beef Combo">Hut Beef Combo</option>
                             <option value="Hut Beef Combo">Hut Paneer Combo</option>
@@ -53,9 +59,11 @@ export default function AddOrder() {
                         <label htmlFor="extras" className="form-label">Extras:</label>
                         <select className="form-select" id="extras" required name='extras' value={extras} onChange={(e)=>onInputChange(e)}>
                             <option selected >-select-</option>
+                            <option value="Big Patty">Bigger Patty</option>
                             <option value="Extra Cheese">Extra Cheese</option>
                             <option value="Coke 250ml">Coke 250ml</option>
                             <option value="Fries">Fries</option>
+                            <option value="Extra Cheese">Addl Mayo</option>
                         </select>
                     </div>
                     <div className="mb-3">

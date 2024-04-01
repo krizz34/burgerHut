@@ -46,7 +46,7 @@ export default function UpdateOrder() {
     <div className='container'>
         <div className='row'>
             <div className='col-md-6 offset-md-3 border rounded p-4 mt-2 shadow'>
-                <h2 className='text-center m-2'>Place New Order</h2>
+                <h2 className='text-center m-2'>Update Order</h2>
                 <form onSubmit={(e) => onSubmit(e)}>
                     <div className="mb-3">
                         <label htmlFor="orderTitle" className="form-label">Combo Title:</label>
