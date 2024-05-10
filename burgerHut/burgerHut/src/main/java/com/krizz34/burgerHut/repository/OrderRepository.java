@@ -5,6 +5,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 
+@Repository
 public interface OrderRepository extends JpaRepository<orders,Long> {
     List<orders> findByStatus(String status);
 }
